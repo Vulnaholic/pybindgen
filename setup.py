@@ -1,13 +1,13 @@
-#!/usr/bin/env python
 from setuptools import setup
 
 with open('README.rst') as file_:
     LONG_DESCRIPTION = file_.read()
+with open('VERSION') as version_file:
+    version = version_file.read().strip()
 
 
 setup(name='PyBindGen',
-      use_scm_version={"version_scheme": "post-release",
-                       "write_to": "pybindgen/version.py"},
+      version=version,
       setup_requires=['setuptools_scm'],
       description='Python Bindings Generator',
       author='Gustavo Carneiro',
